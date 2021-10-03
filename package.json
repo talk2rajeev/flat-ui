@@ -1,0 +1,48 @@
+{
+  "name": "react-ui-kit",
+  "version": "0.1.0",
+  "description": "React UI Components, react UI kit",
+  "main": "lib/index.js",
+  "types": "lib",
+  "watch": {
+    "minify": "src/assets/css/*.css"
+  },
+  "scripts": {
+    "build": "tsc -p . && yarn copy-assets",
+    "storybook": "start-storybook",
+    "create-asset-within-lib": "mkdir lib/assets && mkdir lib/assets/css",
+    "copy-assets": "yarn create-asset-within-lib && yarn copy-css",
+    "copy-css": "cp -R ./src/assets/css/* ./lib/assets/css",
+    "minify": "css-minify --dir src/assets/css --output dist"
+  },
+  "keywords": [
+    "React UI Components",
+    "React UI Kit",
+    "react dropdown",
+    "react radio",
+    "react checkbox",
+    "react accordian",
+    "react menu",
+    "react breadcrumb",
+    "react toast",
+    "react tooltip",
+    "react card",
+    "react table",
+    "npm"
+  ],
+  "author": "Rajeev Sharma",
+  "repository": "https://github.com/talk2rajeev/rt-autocomplete.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/react": "^6.3.8",
+    "@types/react": ">=17.0.0",
+    "@types/storybook__react": "^5.2.1",
+    "react": ">=17.0.0",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.21",
+    "react": "^17.0.2",
+    "typescript": "^4.4.3"
+  }
+}
