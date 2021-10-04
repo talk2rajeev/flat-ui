@@ -26,16 +26,16 @@ export const RadioGroup: React.FC<RadioGroupInterface> = ({ items, onRadioSelect
             }`}
         >
             {items.map((item) => (
-            <div
-                key={item}
-                className={`radio-item ${checkedItem === item && "checked"}`}
-                onClick={() => !disabled && onselect(item)}
-            >
-                <div className="radio-outer">
-                <div className="radio-inner"></div>
+                <div
+                    key={item}
+                    className={`radio-item ${checkedItem === item && "checked"}`}
+                    onClick={() => !disabled && onselect(item)}
+                >
+                    <div className="radio-outer">
+                    <div className="radio-inner"></div>
+                    </div>
+                    <div className="radio-label">{item}</div>
                 </div>
-                <div className="radio-label">{item}</div>
-            </div>
             ))}
         </div>
     );

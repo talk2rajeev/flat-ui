@@ -2,8 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { RadioGroup } from "../../Radio";
 
-storiesOf("Radio Button", module)
-    .add("Radio",
+storiesOf("Radio", module)
+    .add("Radio default",
         () => {
             const items = ["Mango", "Banana", "Guava"];
             const onRadioSelect = (item) => {
