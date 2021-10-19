@@ -1,0 +1,16 @@
+.rt-menu-container {
+    position: relative;
+}
+.rt-menu-item {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.rt-menu--stacked > .rt-menu-item {
+    display: block;
+}
+.rt-menu--inline > .rt-menu-item {
+    display: inline-block;
+}
+.rt-menu--show-active-menu > .rt-menu-item--active {
+    font-weight: bold;
+}
