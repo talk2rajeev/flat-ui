@@ -1,3 +1,72 @@
 .rt-card {
     position: relative;
+    border: 1px solid #cdcdcd;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #000000d9;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    background: #fff;
+    border-radius: 2PX;
 }
+
+.rt-card.rt-card--border-radius {
+    border-radius: 4px;
+}
+
+.rt-card--cover-image-wrapper {
+    position: relative;
+    background: #efefef;
+} 
+.rt-card--cover-image-wrapper> .rt-card--cover-image {
+    width: 100%;
+}
+.rt-card--cover-image-wrapper> .rt-card--cover-image > img {
+    width: 100%;
+    object-fit: cover;
+}
+.rt-card--border-radius .rt-card--cover-image > img{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.rt-card .rt-card--header-wrapper {
+    position: relative;
+    padding: 8px 8px;
+
+} 
+.rt-card .rt-card--header-wrapper.rt-card--with-bottom-header {
+    border-bottom: 1px solid #cdcdcd;
+} 
+.rt-card--header-wrapper > .rt-card--header {
+    font-weight: normal;
+}   
+.rt-card--header > .header-text {
+    margin: 0;
+    padding: 0;
+}
+
+.rt-card > .rt-card--body {
+    padding: 8px 8px;
+}
+
+.rt-card.rt-card--box-shaddow-hover:hover {
+    border-color: transparent;
+    box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017;
+    transition: all .3s ease-in-out;
+}
+
+.rt-card.rt-card--box-shaddow {
+    box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017;
+}
+/* 
+.rt-card .rt-card--cover-image
+.rt-card .rt-card--box-shaddow
+.rt-card .rt-card--box-shaddow-hover
+.rt-card .cover-image-wrapper
+.rt-card .cover-image */
