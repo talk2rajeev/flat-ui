@@ -1,56 +1,26 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
+import React from 'react';
+
 import { RadioGroup } from "../../Radio";
 
-storiesOf("Radio", module)
-    .add("Radio default",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onRadioSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <RadioGroup
-                items={items}
-                onRadioSelect={onRadioSelect}
-            />
-        }
-    )
-    .add("Radio with disabled flag",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onRadioSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <RadioGroup
-                items={items}
-                onRadioSelect={onRadioSelect}
-                disabled={true}
-            />
-        }
-    )
-    .add("Radio with alignment option",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onRadioSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <RadioGroup
-                items={items}
-                onRadioSelect={onRadioSelect}
-                alignment="stacked"
-            />
-        }
-    )
-    .add("with default value",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onRadioSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <RadioGroup
-                items={items}
-                onRadioSelect={onRadioSelect}
-                defaultValue="Banana"
-            />
-        }
-    );
+export default {
+    title: 'Radio',
+    component: RadioGroup,
+    argTypes: {
+        alignment: {
+            options: ['inline', 'stacked'],
+            control: { type: 'radio' }
+        },
+    },
+};
+
+
+const Template = (args) => <RadioGroup {...args} />;
+
+export const RadioButtons = Template.bind({});
+RadioButtons.args = {
+    defaultValue: 'Mango',
+    items: ["Mango", "Banana", "Guava"],
+    disabled: false,
+    alignment: 'stacked',
+};
+

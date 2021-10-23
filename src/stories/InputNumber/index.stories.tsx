@@ -1,22 +1,31 @@
-import React, {useState} from 'react'
-import { storiesOf } from "@storybook/react";
-import { InputNumber } from "../../InputNumber";
+import React from 'react';
 
-storiesOf("InputNumber", module)
-    .add("Default InputNumber",
-        () => {
-            const [value, setValue] = useState<number>(4);
-            const onInputChange = (val, name) => {
-                console.log("value, name > ", value, name);
-                setValue(val)
-            };
-            return <InputNumber
-                onInputChange = {onInputChange}
-                defaultValue= {value}
-                disabled
-                border
-                name="number"
-                borderRadius
-            />
-        }
-    );
+import { InputNumber } from '../../InputNumber';
+
+const icon = <span>🔍</span>;
+
+// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+export default {
+  title: 'InputNumber Component',
+  component: InputNumber,
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    border: true,
+    borderRadius: false,
+    disabled: false,
+  }
+};
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template = (args) => <InputNumber {...args} />;
+
+export const TextNumber = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+TextNumber.args = {
+    borderRadius: false,
+    border: true,
+    disabled: false,
+};
+
+
+

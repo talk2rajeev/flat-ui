@@ -1,19 +1,32 @@
-import React, {useState} from 'react'
-import { storiesOf } from "@storybook/react";
+import React from 'react'
+
 import { Menu } from "../../Menu";
 
-storiesOf("Menu", module)
-    .add("Menu with default setting",
-        () => {
-            const onInputChange = (val) => {
-                console.log("value", val);
-            };
-            return <Menu
-                onclick={onInputChange}
-                items={['Home', 'About', 'Contacts']}
-                alignment="stacked"
-                showActiveMenu={false}
-                activeMenu="Home"
-            />
-        }
-    );
+export default {
+    title: 'Menu',
+    component: Menu,
+    argTypes: {
+        alignment: {
+            options: ['inline', 'stacked'],
+            control: { type: 'radio' }
+        },
+    },
+};
+
+
+const Template = (args) => <Menu {...args} />;
+
+export const MenuComponent = Template.bind({});
+MenuComponent.args = {
+    activeMenu: 'Home',
+    items: ['Home', 'About', 'Contacts'],
+    disabled: false,
+    alignment: 'stacked',
+    showActiveMenu: true,
+    onclick: clickHandler
+};
+
+function clickHandler(item) {
+    console.log(item)
+}
+

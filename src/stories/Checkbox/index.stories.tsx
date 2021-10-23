@@ -1,88 +1,27 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { Checkbox, CheckboxGroup } from "../../Checkbox";
+import React from 'react';
 
-storiesOf("Checkbox", module)
-    .add("Single Checkbox",
-        () => {
-            const onItemCheck = (item) => {
-                console.log("single item check > ", item);
-            };
-            return <Checkbox
-                item="Mango"
-                onItemCheck={onItemCheck}
-            />
-        }
-    )
-    .add("Multiple Single Checkbox",
-        () => {
-            const onItemCheck = (item) => {
-                console.log("single item check > ", item);
-            };
-            return <div>
-                <Checkbox
-                    item="Mango"
-                    onItemCheck={onItemCheck}
-                />
-                <Checkbox
-                    item="dsasd"
-                    onItemCheck={onItemCheck}
-                />
-                <Checkbox
-                    item="wetwet"
-                    onItemCheck={onItemCheck}
-                />
-            </div>
-        }
-    )
-    .add("Checkbox default",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onCheckboxSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <CheckboxGroup
-                items={items}
-                onCheckboxSelect={onCheckboxSelect}
-            />
-        }
-    )
-    .add("Checkbox with disabled flag",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onCheckboxSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <CheckboxGroup
-                items={items}
-                onCheckboxSelect={onCheckboxSelect}
-                disabled={true}
-            />
-        }
-    )
-    .add("Checkbox with alignment option",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onCheckboxSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <CheckboxGroup
-                items={items}
-                onCheckboxSelect={onCheckboxSelect}
-                alignment="stacked"
-            />
-        }
-    )
-    .add("Checkbox with default value",
-        () => {
-            const items = ["Mango", "Banana", "Guava"];
-            const onCheckboxSelect = (item) => {
-                console.log("item selected > ", item);
-            };
-            return <CheckboxGroup
-                items={items}
-                onCheckboxSelect={onCheckboxSelect}
-                defaultValue="Banana"
-            />
-        }
-    );
+import { CheckboxGroup } from "../../Checkbox";
+
+export default {
+    title: 'CheckboxGroup',
+    component: CheckboxGroup,
+    argTypes: {
+        alignment: {
+            options: ['inline', 'stacked'],
+            control: { type: 'radio' }
+        },
+    },
+};
+
+
+const Template = (args) => <CheckboxGroup {...args} />;
+
+export const CheckboxGroupItems = Template.bind({});
+CheckboxGroupItems.args = {
+    defaultValue: 'Mango',
+    items: ["Mango", "Banana", "Guava"],
+    disabled: false,
+    alignment: 'stacked',
+    onCheckboxSelect: (item)=>{console.log(item)}
+};
+

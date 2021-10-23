@@ -1,93 +1,41 @@
-import React, {useState} from 'react'
-import { storiesOf } from "@storybook/react";
-import { InputText } from "../../InputText";
+import React from 'react';
 
-storiesOf("InputText", module)
-    .add("InputText with default setting",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                console.log("value, name > ", value, name);
-                setValue(val)
-            };
-            return <InputText
-                onInputChange = {onInputChange}
-                defaultValue= {value}
-            />
-        }
-    )
-    .add("disabled InputText with default value",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                setValue(val)
-            };
-            return <InputText
-                onInputChange ={onInputChange}
-                defaultValue= {value}
-                disabled = {true}
-                name="username"
-            />
-        }
-    )
-    .add("InputText with icon",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                setValue(val)
-            };
-            return <InputText
-                onInputChange ={onInputChange}
-                defaultValue= {value}
-                icon = {<span>🔍</span>}
-                iconAlignment="left"
-            />
-        }
-    )
-    .add("InputText with no border",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                setValue(val)
-            };
-            return <InputText
-                onInputChange ={onInputChange}
-                defaultValue= {value}
-                icon = {<span>🔍</span>}
-                iconAlignment="left"
-                border= {false}
-            />
-        }
-    )
-    .add("InputText with border-radius",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                setValue(val)
-            };
-            return <InputText
-                onInputChange ={onInputChange}
-                defaultValue= {value}
-                icon = {<span>🔍</span>}
-                iconAlignment="left"
-                border= {false}
-                borderRadius={true}
-            />
-        }
-    )
-    .add("InputText with border-radius",
-        () => {
-            const [value, setValue] = useState<string>('');
-            const onInputChange = (val, name) => {
-                setValue(val)
-            };
-            return <InputText
-                onInputChange ={onInputChange}
-                defaultValue= {value}
-                icon = {<span>🔍</span>}
-                iconAlignment="right"
-                border= {true}
-                borderRadius={true}
-            />
-        }
-    );
+import { InputText } from '../../InputText';
+
+const icon = <span>🔍</span>;
+
+// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+export default {
+  title: 'InputText Component',
+  component: InputText,
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    border: true,
+    borderRadius: false,
+    disabled: false,
+    icon: {
+        options: [<span>🔍</span>, null],
+        control: { type: 'radio' }
+    },
+    iconAlignment: {
+        options: ['left', 'right'],
+        control: { type: 'radio' }
+    },
+  }
+};
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template = (args) => <InputText {...args} />;
+
+export const TextInput = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+TextInput.args = {
+    borderRadius: false,
+    border: true,
+    disabled: false,
+    icon: <span>🔍</span>,
+    iconAlignment: 'left'
+};
+
+
+
