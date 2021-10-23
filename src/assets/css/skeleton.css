@@ -1,0 +1,28 @@
+.loading .skeleton {
+    animation: shimmer 1s linear 0s infinite alternate forwards;
+    opacity: .7;
+}
+
+@keyframes shimmer {
+    0% {
+        background: hsl(200, 15%, 60%);
+    }
+    50% {
+        background: hsl(200, 20%, 75%);
+    }
+    100% {
+        background: hsl(200, 20%, 85%);
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background: hsl(200, 15%, 60%);
+    }
+    50% {
+        background: hsl(200, 20%, 80%);
+    }
+    100% {
+        background: hsl(200, 20%, 95%);
+    }
+}
