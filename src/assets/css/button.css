@@ -1,9 +1,11 @@
 .rt-btn {
   border: 0;
-  border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+}
+.rt-btn--withradius {
+  border-radius: 4px;
 }
 .rt-btn--primary {
   color: white;
