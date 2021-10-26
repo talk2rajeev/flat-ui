@@ -19,11 +19,12 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const Button = Template.bind({});
+export const ButtonTemplate = Template.bind({});
 ButtonTemplate.args = {
     buttonType: 'primary',
     label: 'Click Me',
     buttonSize: 'small',
     disabled: false,
+    withBorderRadius: false,
 };
 
