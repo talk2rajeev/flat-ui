@@ -4,16 +4,16 @@
   "description": "React UI Components, react UI kit",
   "main": "lib/index.js",
   "types": "lib",
-  "watch": {
-    "minify": "src/assets/css/*.css"
-  },
   "scripts": {
-    "build": "tsc -p . && yarn copy-assets",
+    "build": "rm -rf lib & tsc -p . && yarn copy-assets",
     "storybook": "start-storybook -p 6006",
+    "dev:watchcss": "node watchAndMinifyCssFiles.js",
+    "dev:storybook": "start-storybook -p 6006",
+    "dev": "yarn init-css-minification & yarn dev:watchcss & yarn dev:storybook",
     "create-asset-within-lib": "mkdir lib/assets && mkdir lib/assets/css",
     "copy-assets": "yarn create-asset-within-lib && yarn copy-css",
-    "copy-css": "cp -R ./src/assets/css/* ./lib/assets/css",
-    "minify": "css-minify --dir src/assets/css --output dist",
+    "copy-css": "cp -R ./src/assets/css/*.min.css ./lib/assets/css",
+    "init-css-minification": "css-minify --dir src/assets/css --output src/assets/css",
     "build-storybook": "build-storybook"
   },
   "keywords": [
@@ -42,6 +42,9 @@
     "@storybook/react": "^6.3.12",
     "@types/react": ">=17.0.0",
     "babel-loader": "^8.2.3",
+    "log-timestamp": "^0.3.0",
+    "minify": "^8.0.3",
+    "node-watch": "^0.7.2",
     "react": ">=17.0.0",
     "react-dom": "^17.0.2"
   },
