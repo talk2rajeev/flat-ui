@@ -1,8 +1,15 @@
+[class^="rt-"] {
+    color: #313131;
+}
 .rt-breadcrumb {
     display: flex;
     flex-direction: row;
 }
 .rt-breadcrumb-item {
     padding: 0 5px 0 0;
+    cursor: pointer;
+    display: inline-block;
 }
+
+
 
