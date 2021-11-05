@@ -26,6 +26,7 @@
 } 
 .rt-card--cover-image-wrapper> .rt-card--cover-image {
     width: 100%;
+    min-height: 150px;
 }
 .rt-card--cover-image-wrapper> .rt-card--cover-image > img {
     width: 100%;

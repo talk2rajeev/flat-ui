@@ -1,6 +1,6 @@
-## flat-ui
+## Jawa-ui
 
-FLAT UI framework helps developers build consistent user interfaces effortlessly. It has all the basic ui components.
+Jawa-Ui framework helps developers build consistent user interfaces effortlessly. It has all the basic ui components.
 
 
 ### installation
