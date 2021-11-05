@@ -1,6 +1,6 @@
 {
-  "name": "neo-ui",
-  "version": "0.1.0",
+  "name": "jawa-ui",
+  "version": "0.1.11",
   "description": "React UI Components, React UI kit",
   "main": "lib/index.js",
   "types": "lib",
@@ -32,6 +32,7 @@
     "npm"
   ],
   "author": "Rajeev Sharma",
+  "repository": "https://github.com/talk2rajeev/jawa-ui.git",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.8",

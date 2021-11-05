@@ -1,5 +1,7 @@
-.githib
+.github
 .storybook
 .vscode
 node_modules
 src
+watchAndMinifyCssFiles.js
+tsconfig.json
