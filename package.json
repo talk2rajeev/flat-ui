@@ -1,7 +1,7 @@
 {
-  "name": "sleek-ui",
+  "name": "neo-ui",
   "version": "0.1.0",
-  "description": "React UI Components, react UI kit",
+  "description": "React UI Components, React UI kit",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
@@ -32,7 +32,6 @@
     "npm"
   ],
   "author": "Rajeev Sharma",
-  "repository": "https://github.com/talk2rajeev/sleek-ui.git",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.15.8",
