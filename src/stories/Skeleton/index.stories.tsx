@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { storiesOf } from "@storybook/react";
-import { Skeleton, TextSkeleton, GridSkeleton } from "../../Skeleton";
+import { Skeleton, TextSkeleton, GridSkeleton, ImageSkeleton, ArticleSkeleton, ArticleSnippetSkeleton } from "../../Skeleton";
 
 storiesOf("Skeleton", module)
     .add("Skeleton",
@@ -36,6 +36,31 @@ storiesOf("Skeleton", module)
         () => {
             return <div style={{width: 600}}>
                     <GridSkeleton rows={5} cols={8}/>
+                </div>
+        }
+    )
+    .add("Image Skeleton",
+        () => {
+            return <div style={{width: 300}}>
+                    <ImageSkeleton width={100} height={100} isRound/>
+                </div>
+        }
+    )
+    .add("Article Skeleton",
+        () => {
+            return <div style={{width: 600, height: 500}}>
+                    <ArticleSkeleton />
+                </div>
+        }
+    )
+    .add("Article Snippet",
+        () => {
+            return <div style={{width: 600, height: 500}}>
+                    <ArticleSnippetSkeleton />
+                    <br />
+                    <ArticleSnippetSkeleton />
+                    <br />
+                    <ArticleSnippetSkeleton />
                 </div>
         }
     );
