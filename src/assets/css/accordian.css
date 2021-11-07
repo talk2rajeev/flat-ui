@@ -1,0 +1,16 @@
+.rt-accordian-container {
+    position: relative;
+}
+.rt-accordian-item {
+    padding: 0 10px 0 10px;
+}
+.rt-accordian-item-header {
+    font-size: 14px;
+    font-weight: 500;
+}
+.rt-accordian-item--open {
+    display: block;
+}
+.rt-accordian-item--close {
+    display: none;
+}

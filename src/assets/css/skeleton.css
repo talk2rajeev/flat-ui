@@ -29,7 +29,7 @@
 
 .rt-text--shimmer {
     width: 100%;
-    min-height: 13px;
+    min-height: 12px;
     animation: pulse 2s infinite ease-in-out;
     -webkit-animation: pulse 2s infinite ease-in-out;
     margin: 0 0 7px 0;
@@ -39,7 +39,7 @@
     width: 70%;
 }
 .rt-text--paragraph > .rt-text--shimmer {
-    height: 13px;
+    height: 12px;
 }
 .rt-text--heading > .rt-text--shimmer {
     height: 22px;
