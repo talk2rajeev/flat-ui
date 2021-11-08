@@ -7,10 +7,40 @@
 .rt-accordian-item-header {
     font-size: 14px;
     font-weight: 500;
+    padding: 12px 0px;
+    line-height: 1.5715;
+    cursor: pointer;
+    background-color: #f8f8f8;
 }
 .rt-accordian-item--open {
     display: block;
+    padding: 20px;
+    background-color: #fdfdfd;
 }
 .rt-accordian-item--close {
     display: none;
+}
+.rt-accordian-header--arrow {
+    position: relative;
+}
+.rt-accordian-header--arrow-left {
+    padding-left: 20px;
+}
+.rt-accordian-header--arrow-right {
+    padding-right: 20px;
+}
+.rt-accordian-arrow--left, .rt-accordian-arrow--right {
+    position: absolute;
+    top: 12px;
+}
+.rt-accordian-arrow--left {
+    left: 0px;
+}
+.rt-accordian-arrow--right {
+    right: 5px;
+}
+.rt-accordian--open .rt-accordian-arrow--left,  
+.rt-accordian--open .rt-accordian-arrow--right {
+    transform: rotate(90deg);
+    transition: all .3s,visibility 0s;
 }
