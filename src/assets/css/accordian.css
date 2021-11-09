@@ -2,29 +2,43 @@
     position: relative;
 }
 .rt-accordian-item {
-    padding: 0 10px 0 10px;
+    padding: 0 10px 0 12px;
 }
 .rt-accordian-item-header {
     font-size: 14px;
     font-weight: 500;
-    padding: 12px 0px;
+    padding: 10px 0 10px 15px;
     line-height: 1.5715;
     cursor: pointer;
     background-color: #f8f8f8;
+    border-bottom: 1px solid #f1F1F1;
 }
 .rt-accordian-item--open {
-    display: block;
+    /* display: block; */
+    height: auto;
     padding: 20px;
     background-color: #fdfdfd;
+    transition: all 0.15s ease-out;
+    overflow: hidden;
 }
 .rt-accordian-item--close {
-    display: none;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: all 0.15s ease-out;
+}
+.rt-accordian-header {
+    padding-left: 10px;
 }
 .rt-accordian-header--arrow {
     position: relative;
 }
+.rt-accordian-arrow--close {
+    transform: rotate(0deg);
+    transition: all .3s,visibility 0s;
+}
 .rt-accordian-header--arrow-left {
-    padding-left: 20px;
+    padding-left: 30px;
 }
 .rt-accordian-header--arrow-right {
     padding-right: 20px;
@@ -34,7 +48,7 @@
     top: 12px;
 }
 .rt-accordian-arrow--left {
-    left: 0px;
+    left: 6px;
 }
 .rt-accordian-arrow--right {
     right: 5px;

@@ -12,9 +12,13 @@ export const Accordian: React.FC<AccordianInterface> = ({ list, onclick, childre
     const [state, setstate] = useState<number>(-1)
 
     const onclickHandler = (index: number) => {
-        setstate(c => {
-            return index;
-        });
+        if (state !== index) {
+            setstate(c => {
+                return index;
+            });
+        } else {
+            setstate(-1)
+        }
     }
     
     return (
@@ -24,7 +28,7 @@ export const Accordian: React.FC<AccordianInterface> = ({ list, onclick, childre
                     return <div className="rt-accordian-item">
                             <div className={`rt-accordian-item-header rt-accordian--${state === index ? 'open' : 'close'} ${hasArrow ? 'rt-accordian-header--arrow rt-accordian-header--arrow-' +arrowAlignment : null}`} onClick={() => onclickHandler(index)}>
                                 {
-                                    hasArrow ? <span className={`rt-accordian-arrow--${arrowAlignment}`}>
+                                    hasArrow ? <span className={`rt-accordian-arrow--${arrowAlignment} rt-accordian-arrow--${state === index ? 'open' : 'close'}`}>
                                         <AccordianArrow />
                                     </span> : null
                                 }
