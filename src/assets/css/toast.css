@@ -1,0 +1,36 @@
+.rt-toast-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 384px;
+    max-width: calc(100vw- 24px* 2);
+    margin-bottom: 16px;
+    margin-left: auto;
+    overflow: hidden;
+    line-height: 1.5715;
+    word-wrap: break-word;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+}
+.rt-toast-header {
+    position: relative;
+    padding: 16px 0 10px;
+}
+.rt-toast-body {
+    line-height: 1.5715;
+    padding: 10px 0 16px;
+}
+.rt-toast-inner {
+    padding: 0 24px;
+}
+.rt-toast-title {
+    line-height: 1.5715;
+}
+.rt-close-icon {
+    cursor: pointer;
+    float: right;
+}
+.rt-close-icon svg {
+    vertical-align: middle;
+}
