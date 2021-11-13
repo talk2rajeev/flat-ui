@@ -1,3 +1,7 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #4b4b4b;
+}
 .rt-toast-wrapper {
     position: fixed;
     top: 20px;
@@ -19,12 +23,16 @@
 }
 .rt-toast-body {
     line-height: 1.5715;
-    padding: 10px 0 16px;
+    padding: 8px 0 16px;
 }
 .rt-toast-inner {
-    padding: 0 24px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 .rt-toast-title {
+    line-height: 1.5715;
+}
+.rt-toast-bodydesc {
     line-height: 1.5715;
 }
 .rt-close-icon {
@@ -33,4 +41,21 @@
 }
 .rt-close-icon svg {
     vertical-align: middle;
+}
+
+.rt-toast-animation-class {
+	position: fixed;
+    right:50px;
+    top:20px;
+    width: 300px;
+    height: auto;
+    position: relative;
+    animation-name: example;
+    animation-duration: .5s;
+    animation-delay: 0s;
+}
+
+@keyframes example {
+  0%   { right:-250px; }
+  100% { right:50px; }
 }

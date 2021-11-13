@@ -3,36 +3,42 @@ import '../assets/css/toast.min.css';
 
 type ToastType = 'success' | 'warning' | 'info' | 'error' |'none';
 
-interface ToastInterface {
+interface ToasterInterface {
     title: string,
     description?: string,
     children?: React.ReactElement,
     toastDuration?: number,
-    toastType?: ToastType
-    onclose?: (title: string, description?: string) => void,
+    toastType?: ToastType,
+}
+
+interface ToastInterface {
+    show: (props: ToasterInterface) => React.ReactElement;
 }
 
 const toastRef = createRef<HTMLDivElement>();
 
-export const Toast = ({ title, description, children, toastDuration, toastType='none', onclose }: ToastInterface) => {
+
+
+
+export const Toast = ({ title, description, children, toastDuration, toastType='none' }: ToasterInterface) => {
     const closeToaster = () => {
         toastRef.current!.style.display = 'none';
-        onclose && onclose(title, description);
     }
+    console.log('Toast called ', title)
 
-    useEffect(() => {
-        let timer: any;
-        if (toastDuration) {
-            timer = setTimeout(()=>{
-                toastRef.current!.style.display = 'none';
-            }, toastDuration)
-        }
-        return () => {
-            if (timer) {
-                clearTimeout(timer)
-            }
-        }
-    }, [])
+    // useEffect(() => {
+    //     let timer: any;
+    //     if (toastDuration) {
+    //         timer = setTimeout(()=>{
+    //             toastRef.current!.style.display = 'none';
+    //         }, toastDuration)
+    //     }
+    //     return () => {
+    //         if (timer) {
+    //             clearTimeout(timer)
+    //         }
+    //     }
+    // }, [])
 
     return (
         <div className="rt-toast-wrapper" ref={toastRef}>
@@ -94,9 +100,86 @@ const InfoIcon = () => <svg viewBox="64 64 896 896" focusable="false" data-icon=
     <path d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"></path>
 </svg>
 
+export const toast: ToastInterface = {
+    show: Toast,
+}
+
 // success: #52c41a
 // error: #f5222d
 // warning: #faad14
+
+export const showNotification = ({title, description, duration, closable }: {title: string, description: string, duration?: number, closable?: boolean}) => {
+    const el = <div accessKey="sdf">{title}</div>;
+    const fragment = document.createDocumentFragment();
+    const wrapper = document.createElement('div');
+    wrapper.className="rt-toast-wrapper rt-toast-animation-class";
+
+    const headerEl = header(title, close);
+    const bodyEl = body(description);
+
+    wrapper.appendChild(headerEl);
+    wrapper.appendChild(bodyEl);
+    
+    fragment.appendChild(wrapper);
+    document.body.appendChild(fragment);
+
+    let timer: any;
+
+    if (duration) {
+        timer = setTimeout(()=>{
+            document.body.removeChild(wrapper);
+        }, duration)
+    } else {
+        if (!closable) {
+            timer = setTimeout(()=>{
+                document.body.removeChild(wrapper);
+            }, 4000)
+        }
+    }
+
+    function close() {
+        document.body.removeChild(wrapper);
+        clearTimeout(timer);
+    }
+}
+
+const header = (title: string, close: ()=>void) => {
+    const fragment = document.createDocumentFragment();
+    const headerEl = document.createElement('div');
+    const headerTitleEl = document.createElement('span');
+    const closeElWrapper = closeIcon(close);
+
+    headerEl.className="rt-toast-header rt-toast-inner";
+    headerTitleEl.className= "rt-toast-title";
+    headerTitleEl.textContent = title;
+    headerEl.appendChild(headerTitleEl);
+    headerEl.appendChild(closeElWrapper);
+    fragment.appendChild(headerEl);
+    return fragment; 
+}
+
+const body = (desc: string) => {
+    const fragment = document.createDocumentFragment();
+    const bodyEl = document.createElement('div');
+    const bodyDescEl = document.createElement('div');
+    bodyEl.className="rt-toast-body rt-toast-inner";
+    bodyDescEl.className= "rt-toast-bodydesc";
+    bodyDescEl.textContent = desc;
+    bodyEl.appendChild(bodyDescEl);
+    fragment.appendChild(bodyEl);
+    return fragment; 
+}
+
+const closeIcon = (close: ()=>void) => {
+    const closeElWrapper = document.createElement('span');
+    closeElWrapper.className="rt-close-icon";
+    closeElWrapper.innerHTML = `<svg viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+        <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+    </svg>`;
+    closeElWrapper.addEventListener('click', close)
+    return closeElWrapper;
+}
+
 
 
 
