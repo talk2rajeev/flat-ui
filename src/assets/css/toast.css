@@ -23,7 +23,7 @@
 }
 .rt-toast-body {
     line-height: 1.5715;
-    padding: 8px 0 16px;
+    padding: 5px 0 16px;
 }
 .rt-toast-inner {
     padding-left: 16px;
@@ -35,9 +35,15 @@
 .rt-toast-bodydesc {
     line-height: 1.5715;
 }
-.rt-close-icon {
+.rt-icon {
     cursor: pointer;
+    vertical-align: middle;
+}
+.rt-icon--close {
     float: right;
+}
+.rt-icon--error {
+    margin-right: 15px;
 }
 .rt-close-icon svg {
     vertical-align: middle;

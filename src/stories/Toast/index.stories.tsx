@@ -20,7 +20,7 @@ storiesOf("Toast", module)
                 <Button withBorderRadius label="Fail" buttonType="primary" buttonSize="medium"  onclick={() => showNotification({title: "Fail", description: "Sorry, the process failed"})} /> &nbsp;
                 <Button withBorderRadius label="Success" buttonType="primary" buttonSize="medium"   onclick={() => showNotification({title: "success", description: "success, the process succed"})} /> &nbsp;
                 <Button withBorderRadius label="Info" buttonType="primary" buttonSize="medium"   onclick={() => showNotification( {title: "info", description: "this info is regarding process", closable:true} ) } /> &nbsp;
-                <Button withBorderRadius label="Error" buttonType="primary" buttonSize="medium"   onclick={() => showNotification({title: "Error", description: "Sorry Error occured, the process failed. Pleae check with server administrator.", closable:true})} /> 
+                <Button withBorderRadius label="Error" buttonType="primary" buttonSize="medium"   onclick={() => showNotification({title: "Error", description: "Sorry Error occured, the process failed. Pleae check with server administrator.", toastType:"error", closable:true})} /> 
             </div>
         }
     );
