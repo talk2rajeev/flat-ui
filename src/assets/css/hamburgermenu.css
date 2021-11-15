@@ -1,0 +1,39 @@
+.rt-hamburger-menu-container {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.rt-hamburger-menu--close {
+  width: 0;
+}
+.rt-hamburger-menu--open {
+  width: 250px;
+}
+
+.rt-hamburger-menu-container .hamburger-menu--item {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.rt-hamburger-menu-container .hamburger-menu--item:hover {
+  color: #111;
+}
+
+.rt-hamburger-menu-container .closebtn {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 20px;
+  font-size: 22px;
+  margin-left: 50px;
+}
