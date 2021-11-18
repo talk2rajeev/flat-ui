@@ -33,10 +33,10 @@ export const HamburgerMenu: React.FC<HamburgerMenuInterface> = ({
     >
         <span className="closebtn" onClick={onclose}>&times;</span>
         {
-            menuItems.map((menu: string) => <span className="hamburger-menu--item" onClick={() => onMenuItemclick(menu)}>{menu}</span>)
+            menuItems.map((menu: string) => <div className="hamburger-menu--item"><span className={`hamburger-menu--item-text hamburgermenu--${menuItmVariation} hamburgermenu--${menuItmVariation}-${activeMenu === menu ? 'active' : ''}`} onClick={() => onMenuItemclick(menu)}>{menu}</span></div>)
         }
     </div>
   );
 };
 
-export const HamburgerIcon = ({onclick}: {onclick: ()=> void}) => <span style={{fontSize:30, cursor: 'pointer'}} onClick={onclick}>&#9776;</span>
+export const HamburgerIcon = ({onclick}: {onclick: ()=> void}) => <span className="hamburger-icon" onClick={onclick}>&#9776;</span>
