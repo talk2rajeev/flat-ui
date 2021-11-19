@@ -3,11 +3,10 @@
     color: #4b4b4b;
 }
 .rt-toast-wrapper {
-    position: fixed;
+    position: fixed!important;
     top: 20px;
-    right: 20px;
+    right: 50px;
     width: 384px;
-    max-width: calc(100vw- 24px* 2);
     margin-bottom: 16px;
     margin-left: auto;
     overflow: hidden;
@@ -17,13 +16,27 @@
     border-radius: 2px;
     box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
 }
+.rt-toast-wrapper--closable {
+    height: 0;
+    transition: height 0.15s ease-out;
+}
+.rt-toast--advance {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.rt-toast--advance .rt-toast-header{
+    border-bottom: 1px solid #f0f0f0;
+}
+.rt-toast--advance .rt-toast-body {
+    padding-top: 16px;
+}
 .rt-toast-header {
     position: relative;
     padding: 16px 0 10px;
 }
 .rt-toast-body {
     line-height: 1.5715;
-    padding: 5px 0 16px;
+    padding: 5px 0 20px;
 }
 .rt-toast-inner {
     padding-left: 16px;
@@ -31,9 +44,11 @@
 }
 .rt-toast-title {
     line-height: 1.5715;
+    font-size: 16px;
 }
 .rt-toast-bodydesc {
     line-height: 1.5715;
+    font-size: 14px;
 }
 .rt-icon {
     cursor: pointer;
@@ -43,7 +58,7 @@
     float: right;
 }
 .rt-icon--error {
-    margin-right: 15px;
+    margin-right: 12px;
 }
 .rt-close-icon svg {
     vertical-align: middle;
