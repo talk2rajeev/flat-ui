@@ -31,12 +31,31 @@ export const Tooltip = ({ title, children }: TooltipInterface) => {
         }
     }, [])
 
+    
+    const modifyChildren = (child: any) => {
+        const newClass = "rt-tooltip-child";
+        const className = {
+            ...child.props.className,
+            newClass
+        };
+        console.log('child.props.className', child.props)
+
+        console.log('className', className)
+
+        const props = {
+            className
+        };
+
+        return React.cloneElement(child, props);
+    }
+
     return (
         <div className={`rt-tooltip-wrapper rt-tooltip-animation-class`} ref={tooltipRef}>
             {
-                showTooltip && <div>{title}</div>
+                showTooltip && <div className="rt-tooltip-text">{title}</div>
             }
-            { children }
+           
+            {React.Children.map(children, child => modifyChildren(child))}
         </div>
     );
 };

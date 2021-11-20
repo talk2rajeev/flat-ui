@@ -1,0 +1,10 @@
+.rt-tooltip-wrapper {
+    position: relative;
+}
+.rt-tooltip-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0, .5);
+    
+}
