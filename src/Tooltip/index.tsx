@@ -3,12 +3,13 @@ import '../assets/css/tooltip.min.css';
 
 interface TooltipInterface {
     title: string,
-    children: React.ReactElement
+    children: React.ReactElement,
+    alignment: 'top' | 'bottom' | 'left' | 'right'
 }
 
 const tooltipRef = createRef<HTMLDivElement>();
 
-export const Tooltip = ({ title, children }: TooltipInterface) => {
+export const Tooltip = ({ title, children, alignment }: TooltipInterface) => {
 
     const [showTooltip, setShowTooltip] = useState(false)
 
@@ -20,16 +21,16 @@ export const Tooltip = ({ title, children }: TooltipInterface) => {
         setShowTooltip(false)
     }
     
-    useEffect(() => {
+    // useEffect(() => {
         
-        tooltipRef.current?.addEventListener('mouseenter', mouseEnter)
-        tooltipRef.current?.addEventListener('mouseleave', mouseLeave)
+    //     tooltipRef.current?.addEventListener('mouseenter', mouseEnter)
+    //     tooltipRef.current?.addEventListener('mouseleave', mouseLeave)
         
-        return () => {
-            tooltipRef.current?.removeEventListener('mouseenter', ()=>{});
-            tooltipRef.current?.removeEventListener('mouseLeave', ()=>{})
-        }
-    }, [])
+    //     return () => {
+    //         tooltipRef.current?.removeEventListener('mouseenter', ()=>{});
+    //         tooltipRef.current?.removeEventListener('mouseLeave', ()=>{})
+    //     }
+    // }, [])
 
     
     const modifyChildren = (child: any) => {
@@ -50,12 +51,12 @@ export const Tooltip = ({ title, children }: TooltipInterface) => {
     }
 
     return (
-        <div className={`rt-tooltip-wrapper rt-tooltip-animation-class`} ref={tooltipRef}>
+        <div className={`rt-tooltip-wrapper rt-tooltip-animation-class`} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} ref={tooltipRef}>
             {
-                showTooltip && <div className="rt-tooltip-text">{title}</div>
+                showTooltip && <div className={`rt-tooltip-text rt-tooltip--align-${alignment}`}><span className={`rt-tooltip-arrow rt-tooltip-arrow--align-${alignment}`}/>{title}</div>
             }
            
-            {React.Children.map(children, child => modifyChildren(child))}
+            {children}
         </div>
     );
 };
