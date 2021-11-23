@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/css/hamburgermenu.css";
 
 export interface HamburgerMenuInterface {
-    onclose: () => void;
+    onMenuClose: () => void;
     onMenuItemClick: (menu: string) => void;
     open: boolean;
     menuItems: Array<string>;
@@ -13,7 +13,7 @@ export interface HamburgerMenuInterface {
 
 export const HamburgerMenu: React.FC<HamburgerMenuInterface> = ({
     open,
-    onclose,
+    onMenuClose,
     onMenuItemClick,
     menuItems,
     showActiveMenu=false,
@@ -31,7 +31,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuInterface> = ({
     <div
       className={`rt-hamburger-menu-container rt-hamburger-menu--${open ? 'open' : 'close'} rt-hamburger-menu--${menuItmVariation} rt-hamburger-menu--${showActiveMenu ? 'show-active-menu' : ''}`}
     >
-        <span className="closebtn" onClick={onclose}>&times;</span>
+        <span className="closebtn" onClick={onMenuClose}>&times;</span>
         {
             menuItems.map((menu: string) => <div className="hamburger-menu--item"><span className={`hamburger-menu--item-text hamburgermenu--${menuItmVariation} hamburgermenu--${menuItmVariation}-${activeMenu === menu ? 'active' : ''}`} onClick={() => onMenuItemclick(menu)}>{menu}</span></div>)
         }

@@ -11,7 +11,7 @@ storiesOf("Ham menu", module)
             return <div>
                 <HamburgerIcon onclick={()=>setOpen(true)}/>
                 <HamburgerMenu 
-                    onclose={()=>setOpen(false)} 
+                    onMenuClose={()=>setOpen(false)} 
                     onMenuItemClick={(item: string)=>{ setActiveMenu(item)}} 
                     open={open ? true : false} 
                     menuItems={['Home', 'About', 'services', 'products', 'contact', 'career']} 
