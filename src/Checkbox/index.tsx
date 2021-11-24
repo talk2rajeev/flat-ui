@@ -31,13 +31,8 @@ export interface CheckboxInterface{
 */
 
 export const CheckboxGroup: React.FC<CheckboxGroupInterface> = ({ items, onCheckboxSelect, defaultValue="", alignment="inline", disabled=false }: CheckboxGroupInterface) => {
-    const [checkedItem, setCheckedItem] = useState<string>(defaultValue);
-
+    
     const checkedItemMap: {[key: string]: boolean} = {}
-  
-    const onselect = (item: string) => {
-      setCheckedItem(item);
-    };
 
     const onItemCheck = (obj: CheckboxReturnType) => {
         checkedItemMap[obj.item] = obj.isChecked;
@@ -52,17 +47,7 @@ export const CheckboxGroup: React.FC<CheckboxGroupInterface> = ({ items, onCheck
             }`}
         >
             {items.map((item) => (
-                <Checkbox item={item} onItemCheck={onItemCheck} defaultValue="" />
-                // <div
-                //     key={item}
-                //     className={`rt-checkbox-item ${checkedItem === item && "rt-checkbox--checked"}`}
-                //     onClick={() => !disabled && onselect(item)}
-                // >
-                //     <div className="rt-checkbox-outer">
-                //         {checkedItem === item ? <span className="rt-checkbox-tickicon">&#10003;</span> : ''}
-                //     </div>
-                //     <div className="rt-checkbox-label">{item}</div>
-                // </div>
+                <Checkbox item={item} key={item} onItemCheck={onItemCheck} defaultValue="" />
             ))}
         </div>
     );
