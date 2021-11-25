@@ -14,7 +14,9 @@
     "copy-assets": "yarn create-asset-within-lib && yarn copy-css",
     "copy-css": "cp -R ./src/assets/css/*.min.css ./lib/assets/css",
     "init-css-minification": "css-minify --dir src/assets/css --output src/assets/css",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "keywords": [
     "React UI Components",

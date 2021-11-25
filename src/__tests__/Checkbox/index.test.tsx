@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { shallow, mount, configure } from 'enzyme';
-import { CheckboxGroup, Checkbox } from '.';
+import { CheckboxGroup, Checkbox } from '../../Checkbox';
 
-// import Adapter from 'enzyme-adapter-react-16';
-// configure({ adapter: new Adapter() })
 
 const props = {
     items:['On', 'off'],
@@ -50,37 +48,3 @@ describe('CheckboxGroup should', ()=>{
         expect(wrapper.find('.rt-checkbox-group--disabled')).toHaveLength(1)
     })
 })
-// wrapper.find('Checkbox').at(0).simulate('click');
-// expect(wrapper.html().includes('<div class="rt-checkbox-group true"></div>')).toBe(true);
-
-
-
-// <div class="rt-checkbox-group null rt-checkbox-group--inline">
-//     <div class="rt-checkbox-group false">
-//         <div class="rt-checkbox-item false">
-//             <div class="rt-checkbox-outer"></div>
-//             <div class="rt-checkbox-label">On</div>
-//         </div>
-//     </div>
-//     <div class="rt-checkbox-group false">
-//         <div class="rt-checkbox-item false">
-//             <div class="rt-checkbox-outer"></div>
-//             <div class="rt-checkbox-label">off</div>
-//         </div>
-//     </div>
-// </div>
-
-// <div class="rt-checkbox-group null rt-checkbox-group--inline">
-//     <div class="rt-checkbox-group false">
-//         <div class="rt-checkbox-item false">
-//             <div class="rt-checkbox-outer"></div>
-//             <div class="rt-checkbox-label">On</div>
-//         </div>
-//     </div>
-//     <div class="rt-checkbox-group false">
-//         <div class="rt-checkbox-item false">
-//             <div class="rt-checkbox-outer"></div>
-//             <div class="rt-checkbox-label">off</div>
-//         </div>
-//     </div>
-// </div>
