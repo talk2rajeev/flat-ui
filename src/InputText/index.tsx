@@ -38,6 +38,7 @@ export const InputText: React.FC<InputTextInterface> = ({
       }`}
     >
       <input
+        type="text"
         className={`rt-input-text ${
           border ? "rt-input-text--bordered" : "rt-input-text--not-bordered"
         } ${
