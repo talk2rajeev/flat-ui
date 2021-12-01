@@ -1,7 +1,7 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef, useState } from 'react';
 import '../assets/css/tooltip.min.css';
 
-interface TooltipInterface {
+export interface TooltipInterface {
     title: string,
     children: React.ReactElement,
     alignment: 'top' | 'bottom' | 'left' | 'right'
@@ -19,35 +19,6 @@ export const Tooltip = ({ title, children, alignment }: TooltipInterface) => {
 
     const mouseLeave = () => {
         setShowTooltip(false)
-    }
-    
-    // useEffect(() => {
-        
-    //     tooltipRef.current?.addEventListener('mouseenter', mouseEnter)
-    //     tooltipRef.current?.addEventListener('mouseleave', mouseLeave)
-        
-    //     return () => {
-    //         tooltipRef.current?.removeEventListener('mouseenter', ()=>{});
-    //         tooltipRef.current?.removeEventListener('mouseLeave', ()=>{})
-    //     }
-    // }, [])
-
-    
-    const modifyChildren = (child: any) => {
-        const newClass = "rt-tooltip-child";
-        const className = {
-            ...child.props.className,
-            newClass
-        };
-        console.log('child.props.className', child.props)
-
-        console.log('className', className)
-
-        const props = {
-            className
-        };
-
-        return React.cloneElement(child, props);
     }
 
     return (
