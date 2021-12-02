@@ -4,7 +4,7 @@ import '../assets/css/button.css';
 type ButtonType = 'primary' | 'secondary';
 type ButtonSize = 'small' | 'medium' | 'large';
 
-interface ButtonInterface {
+export interface ButtonInterface {
     buttonType: ButtonType,
     label: string,
     buttonSize: ButtonSize,
