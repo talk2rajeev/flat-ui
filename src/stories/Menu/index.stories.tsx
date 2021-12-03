@@ -1,8 +1,9 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { storiesOf } from "@storybook/react";
 import { Menu } from "../../Menu";
 
-export default {
+
+export default  {
     title: 'Menu',
     component: Menu,
     argTypes: {
@@ -29,4 +30,3 @@ MenuComponent.args = {
 function clickHandler(item) {
     console.log(item)
 }
-
