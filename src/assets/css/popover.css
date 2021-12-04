@@ -1,0 +1,55 @@
+.rt-popover-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.rt-popover-text {
+    position: absolute;
+    min-width: 100px;
+    max-width: 200px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    padding: 10px 10px;
+    font-size: 12px;
+    z-index: 1;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+}
+.rt-popover-arrow {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+.rt-popover-arrow--align-right {
+    left: -4px;
+    top: 10px;
+}
+.rt-popover-arrow--align-left {
+    right: -4px;
+    top: 10px;
+}
+.rt-popover-arrow--align-bottom {
+    left: 45%;
+    top: -4px;
+}
+.rt-popover-arrow--align-top {
+    left: 45%;
+    bottom: -4px;
+}
+.rt-popover--align-right {
+    left: 105%;
+}
+.rt-popover--align-left {
+    right: 105%;
+}
+.rt-popover--align-bottom {
+    left: -6px;
+    top: 105%;
+}
+.rt-popover--align-top {
+    left: -6px;
+    bottom: 103%;
+}
