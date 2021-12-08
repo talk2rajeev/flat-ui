@@ -1,0 +1,22 @@
+.rt-header-wrapper {
+    position: relative;
+    background-color: #e8e8e8;
+}
+.rt-header {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.rt-headermenu-block {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.rt-headerchild {
+    display: inline-block;
+    margin-left: 30px;
+    cursor: pointer;
+}
