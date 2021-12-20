@@ -1,7 +1,7 @@
 import React, {useState, createRef} from 'react';
 import '../assets/css/accordian.min.css';
 
-interface AccordianInterface {
+export interface AccordianInterface {
     list: Array<string>,
     onclick: (item: string) => void,
     children: React.ReactNode,
