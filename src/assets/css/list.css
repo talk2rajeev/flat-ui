@@ -1,0 +1,16 @@
+.rt-list-container {
+    position: relative;
+}
+.rt-list-grid {
+    position: relative;
+}
+.rt-list-item {
+    padding: 8px 10px;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+
+}
+.rt-list-item:last-child {
+    border-bottom: 1px solid #dedede;
+}
