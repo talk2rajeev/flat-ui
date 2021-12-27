@@ -1,0 +1,42 @@
+.rt-steps-container {
+    position: relative;
+}
+.rt-step-line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    top: 75%;
+    border-top: 1px solid #cdcdcd;
+    z-index: 0;
+}
+.rt-steps {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
+}
+.rt-step-item {
+    z-index: 1;
+}
+.rt-step-wrapper {
+    cursor: pointer;
+    word-wrap: break-word;
+}
+.rt-step {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    background: #dedede;
+    border-radius: 50%;
+    z-index: 1;
+    color: #313131;
+    text-align: center;
+    margin: 0 auto;
+}
+.rt-step--active {
+    background: #0099ff;
+    color: #fff;
+    box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017;
+}
