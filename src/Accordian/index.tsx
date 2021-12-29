@@ -25,7 +25,7 @@ export const Accordian: React.FC<AccordianInterface> = ({ list, onclick, childre
         <div className="rt-accordian-container">
             {
                 list.map((item: string, index: number) => {
-                    return <div className="rt-accordian-item">
+                    return <div className="rt-accordian-item" key={index}>
                             <div className={`rt-accordian-item-header rt-accordian--${state === index ? 'open' : 'close'} ${hasArrow ? 'rt-accordian-header--arrow rt-accordian-header--arrow-' +arrowAlignment : null}`} onClick={() => onclickHandler(index)}>
                                 {
                                     hasArrow ? <span className={`rt-accordian-arrow--${arrowAlignment} rt-accordian-arrow--${state === index ? 'open' : 'close'}`}>
