@@ -1,0 +1,21 @@
+.rt-tab-wrapper{
+    position: relative;
+}
+.rt-tab-list{
+    display: flex;
+    flex-direction: row;
+}
+.rt-tab {
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+.rt-tab--active{
+    border-bottom: none;
+    font-weight: bold;
+}
+.rt-tab-content-wrapper{
+    padding: 20px;
+    border: 1px solid #efefef;
+    margin-top: -1px;
+}
