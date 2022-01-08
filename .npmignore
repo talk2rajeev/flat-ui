@@ -1,7 +1,11 @@
 .github
 .storybook
 .vscode
+.gitignore
+.babelrc
 node_modules
 src
+coverage
+__mocks__
 watchAndMinifyCssFiles.js
 tsconfig.json
