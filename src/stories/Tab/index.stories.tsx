@@ -13,6 +13,7 @@ storiesOf("Tab", module)
         <Tab
             tabList={ ['One', 'Two', 'Three'] }
             renderChild={RenderChild}
+            defaultTab="One"
         />
     </div>
 })
