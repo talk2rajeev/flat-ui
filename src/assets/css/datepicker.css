@@ -1,0 +1,12 @@
+.rt-datepicker-wrapper {
+    position: relative;
+}
+.rt-datepicker {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 40px;
+    line-height: 19px;
+    padding: 7.5px 12.5px;
+    outline: none;
+}
