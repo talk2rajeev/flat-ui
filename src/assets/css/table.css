@@ -1,3 +1,7 @@
 .rt-table-wrapper {
     position: relative;
 }
+.rt-table-header {
+    display: flex;
+    flex-direction: row;
+}
