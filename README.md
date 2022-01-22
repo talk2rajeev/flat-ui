@@ -7,11 +7,13 @@ Jawa-Ui framework helps developers build consistent user interfaces effortlessly
 `yarn install`
 
 ### Run
-`yarn storybook`
+`yarn dev`
 
 
 ### test cases
+
 unit test
 `yarn test` or `npm run test`
+
 unit test coverage report
 `yarn coverage` or `npm run coverage`
