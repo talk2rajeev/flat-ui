@@ -1,6 +1,6 @@
 ## Jawa-ui
 
-Jawa-Ui framework helps developers build consistent user interfaces effortlessly. It has all the basic ui components.
+Jawa-ui is React and TypeScript based UI component library. It helps developers build consistent user interfaces effortlessly. It has all the basic ui components.
 
 
 ### installation
