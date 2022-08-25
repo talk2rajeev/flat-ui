@@ -7,6 +7,7 @@ Jawa-ui is React and TypeScript based UI component library. It helps developers 
 
 ### installation
 `yarn install`
+css-minify npm module is used to minify css.
 `yarn global add css-minify`
 
 ### Run
