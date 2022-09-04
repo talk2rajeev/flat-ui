@@ -1,6 +1,6 @@
 ## Jawa-ui
 
-Jawa-ui is React and TypeScript based UI component library. It has all the basic core UI components. It helps developers build consistent user interfaces effortlessly. It has all the basic ui components.
+Jawa-ui is React and TypeScript based UI component library. It has all the basic core UI components. It helps developers build consistent user interfaces effortlessly.
 
 ### working with npm package
 `npm install jawa-ui` command will install 
