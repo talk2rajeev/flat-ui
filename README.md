@@ -1,6 +1,7 @@
 ## Jawa-ui (Component Design System)
 
 Jawa-ui is React and TypeScript based UI component library. It has all the basic core UI components. It helps developers build consistent user interfaces effortlessly.
+It is in development pphase.
 
 ### working with npm package
 `npm install jawa-ui` command will install the component library
